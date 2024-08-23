@@ -1,32 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alpha Clash</title>
-    <!-- Daisy's+tailwind  -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- custom css  -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="font-poppins">
-    <main
-      class="min-h-screen bg-[1E1E1E] bg-[url(images/background.png)] bg-no-repeat bg-center"
-    >
-      <section class="home min-h-screen text-white flex justify-center items-center">
-        <div class=" flex flex-col items-center">
-          <h3 class="font-anton text-8xl">ALPHABET CLASH</h3>
-          <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-          <button class="btn text-black bg-white">Play Now</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpha Clash</title>
+  <!-- Daisy's+tailwind  -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- custom css  -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body id="full-body" class=" font-poppins  ">
+  <main class=" min-h-screen bg-[1E1E1E] bg-[url(images/background.png)] bg-no-repeat bg-center">
+    <!-- home section  -->
+    <section id="home" class="home min-h-screen text-white flex justify-center items-center ">
+      <div class=" flex flex-col items-center">
+        <h3 class="font-anton text-8xl">ALPHABET CLASH</h3>
+        <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+        <button onclick='play()' class="btn text-black bg-white">Play Now</button>
+      </div>
+    </section>
+    <!-- Play -->
+    <section id="play_ground" class="play_ground hidden">
+      <div class=" flex flex-col items-center  gap-20 pt-20">
+        <!-- dislpay -->
+        <div class="">
+          <div class="artboard artboard-horizontal phone-6 border-[15px] border-[#010313CC] rounded-xl  bg-[#FFFFFFB3]">
+            <div class="flex flex-col items-center justify-center gap-12 ">
+              <p  class="bg-[#2F2941] text-white rounded-b-xl p-2">Don't watch keyboard while playing...</p>
+              <p id="current-alphabet" class="text-9xl text-black font-bold">Y</p>
+            </div>
+          </div>
+
         </div>
-      </section>
-      <section class="play_ground"></section>
-      <section class="score"></section>
-    </main>
-  </body>
+        <!-- keyboard -->
+        <div>
+          <div class="my-1 flex w-full justify-center gap-1">
+            <kbd id="q" class="kbd">q</kbd>
+            <kbd id="w" class="kbd">w</kbd>
+            <kbd id="e" class="kbd">e</kbd>
+            <kbd id="r" class="kbd">r</kbd>
+            <kbd id="t" class="kbd">t</kbd>
+            <kbd id="y" class="kbd">y</kbd>
+            <kbd id="u" class="kbd">u</kbd>
+            <kbd id="i" class="kbd">i</kbd>
+            <kbd id="o" class="kbd">o</kbd>
+            <kbd id="p" class="kbd">p</kbd>
+          </div>
+          <div class="my-1 flex w-full justify-center gap-1">
+            <kbd id="a" class="kbd">a</kbd>
+            <kbd id="s" class="kbd">s</kbd>
+            <kbd id="d" class="kbd">d</kbd>
+            <kbd id="f" class="kbd">f</kbd>
+            <kbd id="g" class="kbd">g</kbd>
+            <kbd id="h" class="kbd">h</kbd>
+            <kbd id="j" class="kbd">j</kbd>
+            <kbd id="k" class="kbd">k</kbd>
+            <kbd id="l" class="kbd">l</kbd>
+          </div>
+          <div class="my-1 flex w-full justify-center gap-1">
+            <kbd id="z" class="kbd">z</kbd>
+            <kbd id="x" class="kbd">x</kbd>
+            <kbd id="c" class="kbd">c</kbd>
+            <kbd id="v" class="kbd">v</kbd>
+            <kbd id="b" class="kbd">b</kbd>
+            <kbd id="n" class="kbd">n</kbd>
+            <kbd id="m" class="kbd">m</kbd>
+            <kbd id="/" class="kbd">/</kbd>
+          </div>
+        </div>
+        <!-- heart -->
+         <div class="flex justify-around w-5/6">
+          <button class="btn flex justify-center rounded-full text-white bg-[#894189]">
+            Life
+            <img src="images/heart.svg" alt="" srcset="">
+            <span>1</span>
+          </button>
+          <button class="btn flex justify-center rounded-full text-white bg-[#360490]">
+            Score
+            <img src="images/score.svg" alt="" srcset="">
+            <span>1</span>
+          </button>
+         </div>
+      </div>
+    </section>
+    <!-- score -->
+    <section class="score hidden">
+      <div class="text-white flex flex-col justify-center items-center min-h-screen space-y-4 ">
+        <div class="bg-[#FFFFFF33]  p-8 rounded-3xl  flex flex-col justify-center items-center ">
+          <h1 class="text-7xl font-extrabold ">
+            Score :
+            <span>14</span>
+          </h1>
+          <button class="btn bg-[#FFFFFF] text-black text-2xl ">Play Now</button>
+          <p class="font-medium text-2xl">Practice will make you Pro</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script/alpha-clash.js"></script>
+</body>
+
 </html>
